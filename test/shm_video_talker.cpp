@@ -90,8 +90,6 @@ void signal_handler(int signal)
 
 int main(int argc, char** argv)
 {
-	
-
 	//setup signal handler for CTRL-C
 	signal(SIGINT, signal_handler);
 	
