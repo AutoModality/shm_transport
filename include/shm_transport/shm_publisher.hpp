@@ -68,9 +68,11 @@ public:
       ptr->len = serlen;
       ros::serialization::OStream out(ptr->data, serlen);
       ros::serialization::serialize(out, msg);
+
       // publish the real message (handle of ShmStruct)
       std_msgs::UInt64 actual_msg;
       actual_msg.data = pobj_->pshm_->get_handle_from_address(ptr);
+      // ROS_INFO("HERE!!!!!!!!!");
       pub_.publish(actual_msg);
     } else if (attempt >= RETRY) {
       ROS_WARN("bad_alloc happened %d times, abandon this message <%p>...", attempt, &msg);
