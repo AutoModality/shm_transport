@@ -32,6 +32,33 @@ namespace shm_transport
       return Subscriber< M >(sub, phlp);
     }
 
+    // SubscriberCallbackHelper< M > * phlp = new SubscriberCallbackHelper< M >(topic, wrap_fn);
+    // ros::Subscriber sub = nh_.subscribe(topic, queue_size, &SubscriberCallbackHelper< M >::callback, phlp);
+    // return Subscriber< M >(sub, phlp);
+
+    // template < class M >
+    // Subscriber< M > subscribe(const std::string & topic, uint32_t queue_size, std::function<void(const boost::shared_ptr< const M > &)> wrap_fn ) {
+    //   SubscriberCallbackHelper< M > * phlp = new SubscriberCallbackHelper< M >(topic, wrap_fn);
+    //   ros::Subscriber sub = nh_.subscribe(topic, queue_size, &SubscriberCallbackHelper< M >::callback, phlp);
+    //   return Subscriber< M >(sub, phlp);
+    // }
+    template<class M>
+    Subscriber<M> subscribe( const std::string & topic, uint32_t queue_size,const boost::function< void(const boost::shared_ptr< M const > &)> &callback )
+    {
+      SubscriberCallbackHelper< M > * phlp = new SubscriberCallbackHelper< M >(topic, callback);
+      ros::Subscriber sub = nh_.subscribe(topic, queue_size, &SubscriberCallbackHelper< M >::callback, phlp);
+      return Subscriber<M>(sub, phlp );
+    }
+    
+    // template<class M, class C>
+    // // Subscriber< M > 
+    // void FOO(const std::string & topic, uint32_t queue_size,  const boost::function< void(C)> &callback ) {
+    //   // SubscriberCallbackHelper< M > * phlp = new SubscriberCallbackHelper< M >(topic, callback);
+    //   // ros::Subscriber sub = nh_.subscribe(topic, queue_size, &SubscriberCallbackHelper< M >::callback, phlp);
+    //   // return Subscriber< M >(sub, phlp);
+    // }
+
+    
     template<class M, class T>
     Subscriber< M > subscribe(const std::string & topic, uint32_t queue_size, void(T::*fp)(const boost::shared_ptr<M const> &),T *obj) {
 #if 1
