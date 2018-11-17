@@ -203,7 +203,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
 
 
 if (CATKIN_ENABLE_TESTING)
-  catkin_add_nosetests(test/test_your_node.py)
+  #catkin_add_nosetests(test/test_your_node.py)
 endif()
 
 
