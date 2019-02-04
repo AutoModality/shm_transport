@@ -17,7 +17,8 @@ class Subscriber;
 template < class M >
 class SubscriberCallbackHelper
 {
-  typedef void (*Func)(const boost::shared_ptr< const M > &);
+  // typedef void (*Func)(const boost::shared_ptr< const M > &);
+  using Func = const boost::function<void(const boost::shared_ptr< const M > &)>;
 
 public:
   ~SubscriberCallbackHelper() {
@@ -44,12 +45,14 @@ public:
   }
 
 private:
-  SubscriberCallbackHelper(const std::string &topic, Func fp)
+  SubscriberCallbackHelper(const std::string &topic, Func &fp)
     : pobj_(), name_(topic), fp_(fp) {
     // change '/' in topic to '_'
+#if 1
     for (int i = 0; i < name_.length(); i++)
       if (name_[i] == '/')
         name_[i] = '_';
+#endif 
   }
 
   ShmObjectPtr pobj_;
