@@ -99,7 +99,7 @@ private:
       : pub_(pub) {
     // change '/' in topic to '_'
     std::string t = topic;
-    for (int i = 0; i < t.length(); i++)
+    for (unsigned i = 0; i < t.length(); i++)
       if (t[i] == '/')
         t[i] = '_';
     mng_shm * pshm = new mng_shm(boost::interprocess::open_or_create, t.c_str(), mem_size);

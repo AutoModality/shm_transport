@@ -30,7 +30,6 @@ public:
   }
 
   void remove(MsgListHead * lc, const mng_shm_ptr & pshm) {
-    long hc = pshm->get_handle_from_address(lc);
     long hn = lc->next, hp = lc->prev;
     MsgListHead * ln = (MsgListHead *)pshm->get_address_from_handle(hn);
     MsgListHead * lp = (MsgListHead *)pshm->get_address_from_handle(hp);
