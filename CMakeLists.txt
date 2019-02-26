@@ -9,10 +9,10 @@ add_definitions(-std=c++11)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  cv_bridge  
+  genmsg
   roscpp 
   std_msgs 
-  genmsg
-  cv_bridge  
 )
 
 find_package(OpenCV REQUIRED)
@@ -37,7 +37,7 @@ find_library(RT_LIBRARY NAMES rt)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include 
-  LIBRARIES shm_transport ${RT_LIBRARY}
+  LIBRARIES ${PROJECT_NAME} ${RT_LIBRARY}
   CATKIN_DEPENDS roscpp
 )
 
@@ -157,3 +157,8 @@ target_link_libraries(shm_video_talker ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} -
 add_executable(shm_video_listener test/shm_video_listener.cpp)
 target_link_libraries(shm_video_listener ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} -lrt)
 #add_dependencies(shm_video_listener shm_transport_generate_messages_cpp)
+
+install(TARGETS ${PROJECT_NAME}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  )
+
