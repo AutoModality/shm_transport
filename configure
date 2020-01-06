@@ -1,0 +1,16 @@
+#!/bin/bash
+source /opt/ros/kinetic/setup.bash
+echo "We are $(pwd)"
+CURDIR=$(readlink -f $(pwd))
+mkdir -p catkin_ws/src/shm_transport
+WORKSPACE=$(readlink -f ./catkin_ws)
+cp -r src catkin_ws/src/shm_transport
+cp -r include catkin_ws/src/shm_transport
+cp -r test catkin_ws/src/shm_transport
+cp package.xml  catkin_ws/src/shm_transport
+cp CMakeLists.txt  catkin_ws/src/shm_transport
+cd catkin_ws
+catkin init --workspace .
+echo "PWD: $(pwd)"
+catkin config --install
+
