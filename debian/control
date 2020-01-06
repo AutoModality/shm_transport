@@ -1,0 +1,13 @@
+Source: shm-transport
+Section: unknown
+Priority: extra
+Maintainer: AutoModality DevOps <dev@automodality.com>
+Build-Depends: cmake, debhelper (>=9),javahelper
+Standards-Version: 3.9.6
+Homepage: <insert the upstream URL, if relevant>
+
+Package: shm-transport
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description:  Utilites for AM based ROs packages
