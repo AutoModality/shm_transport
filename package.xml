@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>shm_transport</name>
-  <version>1.0.35</version>
+  <version>1.0.36</version>
   <description>The shared memory transport package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 

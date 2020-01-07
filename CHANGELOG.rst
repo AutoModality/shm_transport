@@ -2,8 +2,8 @@
 Changelog for package shm_transport
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.36 (2020-01-06)
+-------------------
 * Fixing package.xml to reflect original shm_transport
 * fixing error with maintiner email
 * Setting maintainer of package for testing out bloom version generation
