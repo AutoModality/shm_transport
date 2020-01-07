@@ -2,6 +2,13 @@
 Changelog for package shm_transport
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fixing package.xml to reflect original shm_transport
+* fixing error with maintiner email
+* Setting maintainer of package for testing out bloom version generation
+* Contributors: Jimi Damon
+
 1.0.33 (2020-01-06)
 -------------------
 
