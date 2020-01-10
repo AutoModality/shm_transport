@@ -9,8 +9,7 @@ install:
 	install -d $(DESTDIR)/opt/ros/kinetic/
 	cp -f -p -r catkin_ws/install/lib $(DESTDIR)/opt/ros/kinetic
 	cp -f -p -r catkin_ws/install/share $(DESTDIR)/opt/ros/kinetic
-#	cp -f -p -r catkin_ws/install/include $(DESTDIR)/opt/ros/kinetic
-
+	cp -f -p -r catkin_ws/install/include $(DESTDIR)/opt/ros/kinetic
 
 clean:
 	@echo "Cleaning"
