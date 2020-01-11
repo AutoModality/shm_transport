@@ -37,3 +37,6 @@ debian/ros-kinetic-*.debhelper.log
 debian/changelog
 debian/debhelper-build-stamp
 debian/source
+debian/files
+debian/*.substvars
+debian/ros-kinetic-*
