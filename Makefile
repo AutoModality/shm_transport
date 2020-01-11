@@ -10,7 +10,7 @@ install:
 	cp -f -p -r catkin_ws/install/lib $(DESTDIR)/opt/ros/kinetic
 	cp -f -p -r catkin_ws/install/share $(DESTDIR)/opt/ros/kinetic
 	cp -f -p -r catkin_ws/install/include $(DESTDIR)/opt/ros/kinetic
-        rm -f $(DESTDIR)/opt/ros/kinetic/lib/pkgconfig/catkin_tools_prebuild.pc
+	rm -f $(DESTDIR)/opt/ros/kinetic/lib/pkgconfig/catkin_tools_prebuild.pc
 
 clean:
 	@echo "Cleaning"
