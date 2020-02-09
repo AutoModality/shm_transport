@@ -27,5 +27,5 @@ jobs:
           owner: 'automodality'
           repo: 'dev'
           distro: 'ubuntu'
-          release: 'melodic'
+          release: 'bionic'
           file: '${{ steps.package.outputs.artifact-path }}'
