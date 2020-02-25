@@ -29,3 +29,4 @@ an offset pointer) from publishers to subscribers.
 The hardest part is life-time management of the messages. We need to
 deallocate messages when no subscribers use them (as soon as possible).
 We are still improving this issue.
+
