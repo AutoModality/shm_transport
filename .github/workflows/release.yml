@@ -65,7 +65,7 @@ jobs:
       - name: Package if published
         if: steps.published.outputs.value == 'true'
         id: package
-        uses: AutoModality/action-package-debian-ros@BB-800/melodic
+        uses: AutoModality/action-package-debian-ros@BB-800/melodic-perception
         with:
           version: ${{ steps.version.outputs.value }}
       - name: Deploy if published
