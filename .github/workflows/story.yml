@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Package
-        uses: AutoModality/action-package-debian-ros@v1.3.2
+        uses: AutoModality/action-package-debian-ros@v3-perception
+
 
 
