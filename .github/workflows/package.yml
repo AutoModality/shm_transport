@@ -12,10 +12,10 @@ jobs:
       fail-fast: true
     steps:
       - uses: AutoModality/action-clean@v1
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Package
         id: package
-        uses: AutoModality/action-package-debian-ros@BB-800/melodic-perception
+        uses: AutoModality/action-package-debian-ros@v3.0.0
         with:
           branch: ${{ github.event.pull_request.head.ref }}
           pull-request-number: ${{ github.event.number }}
