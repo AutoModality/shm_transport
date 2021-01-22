@@ -34,7 +34,6 @@
 
 catkin_ws
 debian/ros-*-*.debhelper.log
-debian/changelog
 debian/debhelper-build-stamp
 debian/source
 debian/files
